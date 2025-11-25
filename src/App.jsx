@@ -1,5 +1,5 @@
 import React from "react";
-import NotesApp from "./NotesApp.jsx";
+import NotesApp from "./Notesapp.jsx";
 
 function App() {
   return <NotesApp />;
