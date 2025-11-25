@@ -6,7 +6,7 @@ import {
   deleteNote,
   loginUser,
   registerUser,
-} from "./api";
+} from "./api.jsx";
 import "./App.css";
 
 const NotesApp = () => {
