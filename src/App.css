@@ -1,0 +1,305 @@
+/* 🌟 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  min-height: 100vh;
+}
+
+/* 🌟 App Container */
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🌟 Title */
+h1 {
+  text-align: center;
+  color: #2d3436;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* ======================================= */
+/* 🌟 Notes Section (unchanged for safety) */
+/* ======================================= */
+.note-input {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.note-input:hover {
+  transform: scale(1.01);
+}
+
+.note-input input,
+.note-input textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.note-input input:focus,
+.note-input textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+.note-input textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.note-input button {
+  background: linear-gradient(135deg, #4a90e2, #357ab7);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.note-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(53, 122, 183, 0.3);
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.notes-list li {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.notes-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.notes-list h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.notes-list p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.notes-list button {
+  margin-right: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notes-list button:nth-child(3) { /* Edit */
+  background: #f6c90e;
+  color: #222;
+}
+
+.notes-list button:nth-child(3):hover {
+  background: #e0b500;
+}
+
+.notes-list button:nth-child(4) { /* Delete */
+  background: #e63946;
+  color: #fff;
+}
+
+.notes-list button:nth-child(4):hover {
+  background: #c62828;
+}
+
+/* Edit mode */
+.notes-list input,
+.notes-list textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.notes-list textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.error {
+  color: #e63946;
+  font-weight: 500;
+  text-align: center;
+  margin: 12px 0;
+}
+
+p.loading {
+  text-align: center;
+  font-style: italic;
+  color: #444;
+}
+
+/* ======================================= */
+/* 🌟 Authentication Page Styles */
+/* ======================================= */
+.auth-form {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.auth-form h2 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.4);
+}
+
+.auth-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.auth-form button {
+  flex: 1 1 48%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #767676;
+}
+
+.auth-form button.login {
+  background: linear-gradient(135deg, #4a90e2, #357ab7);
+}
+
+.auth-form button.register {
+  background: linear-gradient(135deg, #34c759, #28a745);
+}
+
+.auth-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.error {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #e74c3c;
+}
+
+/* 🌟 Responsive */
+@media (max-width: 650px) {
+  .auth-form {
+    padding: 2rem 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .auth-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .auth-form .button-group {
+    flex-direction: column;
+  }
+
+  .auth-form button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-form input {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .auth-form button {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+  }
+}
+
+.logout-button{
+  flex: 1 1 48%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #767676;
+}
