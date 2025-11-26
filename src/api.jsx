@@ -14,11 +14,11 @@ API.interceptors.request.use((req) => {
 });
 
 // Notes APIs
-export const fetchNotes = () => API.get('/notes');
-export const createNote = (newNote) => API.post('/notes', newNote);
-export const updateNote = (id, updatedNote) => API.put(`/notes/${id}`, updatedNote);
+export const fetchNotes = () => API.get('/api/notes');
+export const createNote = (newNote) => API.post('/api/notes', newNote);
+export const updateNote = (id, updatedNote) => API.put(`/api/notes/${id}`, updatedNote);
 export const deleteNote = (id) => API.delete(`/notes/${id}`);
 
 // Auth APIs
-export const registerUser = (userData) => API.post('/auth/register', userData);
-export const loginUser = (credentials) => API.post('/auth/login', credentials);
+export const registerUser = (userData) => API.post('/api/auth/register', userData);
+export const loginUser = (credentials) => API.post('/api/auth/login', credentials);
